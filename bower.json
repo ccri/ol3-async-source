@@ -1,0 +1,17 @@
+{
+  "name": "ol3-async-canvas",
+  "description": "An Asynchronous ImageCanvas Source for OpenLayers 3.x",
+  "main": "dist/ol3-async-canvas.js",
+  "authors": [
+    "Brian Hulette (CCRi)"
+  ],
+  "private": true,
+  "dependencies": {
+    "openlayers": "~3.14.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "ol3-async-canvas",
+  "version": "1.0.0",
+  "description": "An Asynchronous ImageCanvas Source for OpenLayers 3.x",
+  "scripts": {
+    "install": "./node_modules/.bin/uglify -s ./src/ol3-async-canvas.js -o ./dist/ol3-async-canvas.min.js; cp ./src/ol3-async-canvas.js ./dist;"
+  },
+  "author": "Brian Hulette (CCRi)",
+  "devDependencies": {
+    "uglify": "^0.1.5"
+  }
+}
