@@ -58,13 +58,12 @@ ol.inherits(ol.source.ImageCanvasAsync, ol.source.Image);
 ol.source.ImageCanvasAsync.prototype.getImageInternal = function(extent, resolution, pixelRatio, projection) {
   resolution = this.findNearestResolution(resolution);
 
-  var canvas = this.canvas_;
-  if (canvas &&
+  if (this.canvas_ &&
       this.renderedRevision_ == this.getRevision() &&
-      canvas.getResolution() == resolution &&
-      canvas.getPixelRatio() == pixelRatio &&
-      ol.extent.containsExtent(canvas.getExtent(), extent)) {
-    return canvas;
+      this.canvas_.getResolution() == resolution &&
+      this.canvas_.getPixelRatio() == pixelRatio &&
+      ol.extent.containsExtent(this.canvas_.getExtent(), extent)) {
+    return this.canvas_;
   }
 
   extent = extent.slice();
@@ -82,5 +81,5 @@ ol.source.ImageCanvasAsync.prototype.getImageInternal = function(extent, resolut
   ol.events.listen(this.canvas_, ol.events.EventType.CHANGE,
       this.handleImageChange, this);
 
-  return canvas;
+  return this.canvas_;
 };
